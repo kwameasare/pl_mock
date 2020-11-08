@@ -11,10 +11,261 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
+  void initState() {
+    onLatest = primaryColor;
+    onPL = Colors.grey;
+    onFantasy = Colors.grey;
+    onStats = Colors.grey;
+    onMore = Colors.grey;
+
+    latestIndicator = homeAccentColor;
+    plIndicator = Colors.white;
+    fantasyIndicator = Colors.white;
+    statsIndicator = Colors.white;
+    moreIndicator = Colors.white;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var ww = MediaQuery.of(context).size.width;
     var hh = MediaQuery.of(context).size.height;
     return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        elevation: 0,
+        child: Container(
+          width: ww,
+          height: hh * 0.06,
+          child: Container(
+            width: ww,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: ww * 0.2,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        onLatest = primaryColor;
+                        onPL = Colors.grey;
+                        onFantasy = Colors.grey;
+                        onStats = Colors.grey;
+                        onMore = Colors.grey;
+
+                        latestIndicator = homeAccentColor;
+                        plIndicator = Colors.white;
+                        fantasyIndicator = Colors.white;
+                        statsIndicator = Colors.white;
+                        moreIndicator = Colors.white;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          height: ww * 0.012,
+                          color: latestIndicator,
+                        ),
+                        Container(
+                            height: ww * 0.06,
+                            width: ww * 0.06,
+                            child: ImageIcon(
+                              AssetImage(
+                                'images/pl3.png',
+                              ),
+                              color: onLatest,
+                            )),
+                        Text(
+                          'Latest',
+                          style: TextStyle(
+                              color: onLatest,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  width: ww * 0.2,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        onLatest = Colors.grey;
+                        onPL = primaryColor;
+                        onFantasy = Colors.grey;
+                        onStats = Colors.grey;
+                        onMore = Colors.grey;
+
+                        latestIndicator = Colors.white;
+                        plIndicator = homeAccentColor;
+                        fantasyIndicator = Colors.white;
+                        statsIndicator = Colors.white;
+                        moreIndicator = Colors.white;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          height: ww * 0.012,
+                          color: plIndicator,
+                        ),
+                        Container(
+                            height: ww * 0.06,
+                            width: ww * 0.06,
+                            child: ImageIcon(
+                              AssetImage(
+                                'images/pl3.png',
+                              ),
+                              color: onPL,
+                            )),
+                        Text(
+                          'PL',
+                          style: TextStyle(
+                              color: onPL,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  width: ww * 0.2,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        onLatest = Colors.grey;
+                        onPL = Colors.grey;
+                        onFantasy = primaryColor;
+                        onStats = Colors.grey;
+                        onMore = Colors.grey;
+
+                        latestIndicator = Colors.white;
+                        plIndicator = Colors.white;
+                        fantasyIndicator = fantasyColor;
+                        statsIndicator = Colors.white;
+                        moreIndicator = Colors.white;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          height: ww * 0.012,
+                          color: fantasyIndicator,
+                        ),
+                        Container(
+                            height: ww * 0.06,
+                            width: ww * 0.06,
+                            child: ImageIcon(
+                              AssetImage(
+                                'images/shirt.png',
+                              ),
+                              color: onFantasy,
+                            )),
+                        Text(
+                          'Fantasy',
+                          style: TextStyle(
+                              color: onFantasy,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  width: ww * 0.2,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        onLatest = Colors.grey;
+                        onPL = Colors.grey;
+                        onFantasy = Colors.grey;
+                        onStats = primaryColor;
+                        onMore = Colors.grey;
+
+                        latestIndicator = Colors.white;
+                        plIndicator = Colors.white;
+                        fantasyIndicator = Colors.white;
+                        statsIndicator = violet84;
+                        moreIndicator = Colors.white;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          height: ww * 0.012,
+                          color: statsIndicator,
+                        ),
+                        Container(
+                            height: ww * 0.06,
+                            width: ww * 0.06,
+                            child: ImageIcon(
+                              AssetImage(
+                                'images/stats.png',
+                              ),
+                              color: onStats,
+                            )),
+                        Text(
+                          'Stats',
+                          style: TextStyle(
+                              color: onStats,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  width: ww * 0.2,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        onLatest = Colors.grey;
+                        onPL = Colors.grey;
+                        onFantasy = Colors.grey;
+                        onStats = Colors.grey;
+                        onMore = primaryColor;
+
+                        latestIndicator = Colors.white;
+                        plIndicator = Colors.white;
+                        fantasyIndicator = Colors.white;
+                        statsIndicator = Colors.white;
+                        moreIndicator = violet84;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          height: ww * 0.012,
+                          color: moreIndicator,
+                        ),
+                        Container(
+                            height: ww * 0.06,
+                            width: ww * 0.06,
+                            child: ImageIcon(
+                              AssetImage(
+                                'images/more.png',
+                              ),
+                              color: onMore,
+                            )),
+                        Text(
+                          'More',
+                          style: TextStyle(
+                              color: onMore,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       body: Container(
         width: ww,
         height: hh,
@@ -101,7 +352,10 @@ class _HomeState extends State<Home> {
                           ),
                           Container(
                             width: ww,
-                            padding: EdgeInsets.all(ww * 0.015),
+                            padding: EdgeInsets.only(
+                                top: ww * 0.015,
+                                left: ww * 0.015,
+                                right: ww * 0.015),
                             child: Column(
                               children: [
                                 Image(
@@ -151,6 +405,19 @@ class _HomeState extends State<Home> {
                                           "Sherwood: This is Mourinho's best Spurs team"),
                                       article(ww, hh, 0.02, 'images/lc.jpg',
                                           "Match preview: Leicester v Wolves"),
+                                      Container(height: ww * 0.02),
+                                      Container(
+                                        height: ww * 0.01,
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [homeAccentColor, violet84],
+                                            begin: Alignment.centerRight,
+                                            end: Alignment.centerLeft,
+                                            stops: [0.15, 0.85],
+                                            //  tileMode: TileMode.clamp
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -159,12 +426,12 @@ class _HomeState extends State<Home> {
                           ),
                           Container(
                             color: Colors.white,
-                            padding:
-                                EdgeInsets.symmetric(horizontal: ww * 0.015),
                             child: Column(
                               children: [
                                 Container(
                                   height: hh * 0.05,
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -182,11 +449,202 @@ class _HomeState extends State<Home> {
                                 ),
                                 Container(
                                   margin: EdgeInsets.symmetric(
-                                      horizontal: ww * 0.01),
-                                  color: Colors.grey[350],
-                                  height: hh * 0.02,
-                                  child: ,
-                                )
+                                      horizontal: ww * 0.015),
+                                  padding: EdgeInsets.all(5),
+                                  alignment: Alignment.centerLeft,
+                                  color: Colors.grey[200],
+                                  height: hh * 0.03,
+                                  width: ww,
+                                  child: Text(' Sunday 08 Nov 2020',
+                                      style: TextStyle(
+                                          fontSize: ww * 0.028,
+                                          color: Colors.black)),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'EVE',
+                                    'images/eve.png',
+                                    '1',
+                                    '3',
+                                    'images/man.png',
+                                    'MNU',
+                                    primaryColor,
+                                    ''),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
+                                  child: Divider(
+                                    height: 2,
+                                  ),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'LEI',
+                                    'images/lei.png',
+                                    '2',
+                                    '1',
+                                    'images/tot.png',
+                                    'TOT',
+                                    primaryColor,
+                                    ''),
+                                Container(
+                                  margin: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
+                                  padding: EdgeInsets.all(5),
+                                  alignment: Alignment.centerLeft,
+                                  color: Colors.grey[200],
+                                  height: hh * 0.03,
+                                  width: ww,
+                                  child: Text(' Sunday 08 Nov 2020',
+                                      style: TextStyle(
+                                          fontSize: ww * 0.028,
+                                          color: Colors.black)),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'EVE',
+                                    'images/eve.png',
+                                    '1',
+                                    '3',
+                                    'images/man.png',
+                                    'MNU',
+                                    primaryColor,
+                                    ''),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
+                                  child: Divider(
+                                    height: 2,
+                                  ),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'LEI',
+                                    'images/lei.png',
+                                    '2',
+                                    '1',
+                                    'images/tot.png',
+                                    'TOT',
+                                    primaryColor,
+                                    ''),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
+                                  child: Divider(
+                                    height: 2,
+                                  ),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'LEI',
+                                    'images/lei.png',
+                                    '2',
+                                    '1',
+                                    'images/tot.png',
+                                    'TOT',
+                                    primaryColor,
+                                    ''),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
+                                  child: Divider(
+                                    height: 2,
+                                  ),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'LEI',
+                                    'images/lei.png',
+                                    '2',
+                                    '1',
+                                    'images/tot.png',
+                                    'TOT',
+                                    primaryColor,
+                                    ''),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
+                                  child: Divider(
+                                    height: 2,
+                                  ),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'LEI',
+                                    'images/lei.png',
+                                    '2',
+                                    '1',
+                                    'images/tot.png',
+                                    'TOT',
+                                    primaryColor,
+                                    ''),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
+                                  child: Divider(
+                                    height: 2,
+                                  ),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'LEI',
+                                    'images/lei.png',
+                                    '2',
+                                    '1',
+                                    'images/tot.png',
+                                    'TOT',
+                                    primaryColor,
+                                    ''),
+                                Container(
+                                  margin: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
+                                  padding: EdgeInsets.all(5),
+                                  alignment: Alignment.centerLeft,
+                                  color: Colors.grey[200],
+                                  height: hh * 0.03,
+                                  width: ww,
+                                  child: Text(' Sunday 08 Nov 2020',
+                                      style: TextStyle(
+                                          fontSize: ww * 0.028,
+                                          color: Colors.black)),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'EVE',
+                                    'images/eve.png',
+                                    '1',
+                                    '3',
+                                    'images/man.png',
+                                    'MNU',
+                                    primaryColor,
+                                    ''),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: ww * 0.015),
+                                  child: Divider(
+                                    height: 2,
+                                  ),
+                                ),
+                                fixture(
+                                    hh,
+                                    ww,
+                                    'LEI',
+                                    'images/lei.png',
+                                    '2',
+                                    '1',
+                                    'images/tot.png',
+                                    'TOT',
+                                    primaryColor,
+                                    ''),
                               ],
                             ),
                           )
