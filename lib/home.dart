@@ -305,7 +305,7 @@ class _HomeState extends State<Home> {
                       child: Image(image: AssetImage('images/pl.png')),
                     ),
                     Container(
-                      height: hh * 0.04,
+                      height: hh * 0.041,
                       margin: EdgeInsets.only(
                         left: 8,
                         top: ww * 0.03,
